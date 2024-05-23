@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Список стран</h2>
+    <ol>
+        {% for data in c_list %}
+        <li><a href="/country/{{data.country}}">{{ data.country }}</a></li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
