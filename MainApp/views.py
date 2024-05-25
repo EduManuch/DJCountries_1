@@ -22,3 +22,15 @@ def country_page(request, country):
             context = {'data': data}
             return render(request, 'country-page.html', context)
     return HttpResponseNotFound(f'Страна {country} не найдена')
+
+
+def languages_list(request):
+    langs = set()
+    for item in c_data:
+        for lang in item['languages']:
+            langs.add(lang)
+    langs = sorted(list(langs))
+    context = {
+        'langs': langs
+    }
+    return render(request, 'languages-list.html', context)
